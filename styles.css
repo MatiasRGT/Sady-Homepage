@@ -21,15 +21,23 @@ section {
     min-height: 100vh;
 }
 
-fill {
+.fill {
     display: grid;
     place-items: center;
     align-content: center;
     min-height: 15vh;
+    opacity: 0;
 }
 
 h1 {
     font-size: 90px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+    font-size: 85px;
     color: white;
     text-align: center;
     text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
