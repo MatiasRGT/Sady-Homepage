@@ -259,3 +259,10 @@ p {
 .card:hover {
     transform: translateY(-10px);
 }
+
+/* hide HOME button on mobile*/
+@media (max-width: 767px) {
+    .home-button {
+        display: none; 
+    }
+}
