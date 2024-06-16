@@ -262,7 +262,19 @@ p {
 
 /* hide HOME button on mobile*/
 @media (max-width: 767px) {
-    .home-button {
+    .home-button-about {
+        display: none; 
+    }
+}
+
+@media (max-width: 767px) {
+    .home-button-cat {
+        display: none; 
+    }
+}
+
+@media (max-width: 767px) {
+    .home-button-projects {
         display: none; 
     }
 }
