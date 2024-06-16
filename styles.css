@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+body {
+    background-color: #242429;
+    height: 100;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: 'Poppins';
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+}
+
+section {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;
+}
+
+fill {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 15vh;
+}
+
+h1 {
+    font-size: 90px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+p {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+
+#footer-info {
+    margin-top: 20px; /* Move this specific <h1> to by 20 pixels */
+}
+
+#fill-id {
+    opacity: 0; /* no opacity so its invisible. Gives time for animation */
+}
+
+.primary-secondary {
+    color: #DDE0E2
+}
+
+/* JS listens for elements with this class to check if they are in the screen */
+/* Default state is to the left and blurred*/
+.hidden {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateX(-90%);
+    transition: all 2s;
+}
+
+/* transforms default state to center and not blurred*/
+.show {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+}
+
+/* Default state is to the right and blurred */
+.hidden.slide-right {
+    transform: translateX(90%);
+    filter: blur(6px);
+    transition: all 2s;
+}
+
+/* transforms default state to center and not blurred*/
+/*
+    IS THIS REALLY NECESARY ????
+*/
+.show.slide-right {
+    transform: translateX(0);
+    filter: blur(0px);
+}
+
+/* Main function is to use with nth-child to add delay */
+.contents {
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+}
+
+/* Adds delay to subtitle of each section */
+.content:nth-child(1) {
+    transition-delay: 100ms;
+}
+
+/* second child is only used for the HOME subtitle */
+.content:nth-child(2) {
+    transition-delay: 250ms;
+}
+
+/* STYLE FOR FELINE GALLERY */
+
+
+.domi-photo {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    place-items: center;
+    margin-top: 15vh;
+    padding: 20px;
+}
+
+/* affects all IMG TAG behavior under domi-photo div class */
+.domi-photo img {
+    width: 70%;
+    max-width: 100%;
+    transition: all 0.7s;
+}
+
+/* adds zoom effect when mouse hovers image on domi-photo div */
+.domi-photo img:hover {
+    width: 90%;
+    max-width: 100%;
+    transition: all 1.2s;
+}
+
+.cat1 {
+    height: 590px;
+    object-fit: cover; /* Ensures the images cover the space while maintaining aspect ratio */
+}
+
+.cat2 {
+    height: 600px;
+    object-fit: cover;
+}
+
+.cat3 {
+    height: 600px;
+    object-fit: cover;
+}
+
+.cat4 {
+    height: 600px;
+    object-fit: cover;
+}
+
+.home-button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1000; /* makes the button is above other content */
+    width: 10px;
+    height: 5px;
+}
+
+.home-button .btn {
+    font-weight: bold;
+    box-shadow: 0 3px 5px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    transition: all 0.7s;
+}
+
+.home-button .btn:hover {
+    font-weight: bold;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    transition: all 0.7s;
+    scale: 1.04;
+}
+
+/*  STYLE FOR ABOUT ME PAGE */
+
+.frame {
+    display: flex;
+    border: 3px solid #000;
+    border-color: #3d3d45;
+    border-radius: 15px;
+    padding: 30px;
+    height: 37vh;
+    width: 65vh;
+    justify-content: center;
+    box-shadow: 0 6px 30px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    transition: all 0.7s;
+}
+
+.frame:hover {
+    transition: all 0.7s;
+    scale: 1.25;
+    box-shadow: 0 6px 30px 0 rgba(255, 255, 255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+}
+
+.abt-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+    margin-top: 20vh;
+}
+
+
+/*  STYLE FOR PERSONAL PROJECTS */
+
+.project-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.card-title {
+    font-size: 24px;
+    color: #333333;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #666666;
+}
+
+.card-img-top {
+    border-radius: 10px;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+.col-md-4 {
+    width: auto; /* Ensure the column width adjusts to its content */
+}
+
+/* Target the entire card */
+.card {
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 300px; /* Set a max width for the cards */
+    margin: 0 10px; /* Add margin to create space between cards */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
